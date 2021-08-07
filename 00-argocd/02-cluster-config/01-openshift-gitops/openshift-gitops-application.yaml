@@ -12,7 +12,7 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: 02-cluster-config/
+    path: 02-cluster-config/01-openshift-gitops
     repoURL: https://github.com/pittar-gitops/gitops-mono-repo.git
     targetRevision: main
   syncPolicy:
