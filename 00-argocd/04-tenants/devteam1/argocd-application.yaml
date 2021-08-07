@@ -8,7 +8,7 @@ metadata:
   name: devteam1-argocd
 spec:
   destination:
-    namespace: openshift-gitops
+    namespace: devteam1-argocd
     server: https://kubernetes.default.svc
   project: tenants
   source:
