@@ -1,0 +1,8 @@
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+
+bases:
+  # OpenShift GitOps Operator
+  - github.com/redhat-canada-gitops/catalog/openshift-gitops-operator/overlays/stable-4.7?ref=master
+  # Sealed Secrets
+  - sealed-secrets 

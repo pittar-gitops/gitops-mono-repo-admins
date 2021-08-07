@@ -1,0 +1,10 @@
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+
+namespace: sealed-secrets
+
+# The file "sealed-secrets-secret.yaml" will be in the .gitignore, it should NOT be checked into git.
+# This file will have to be present in this directory when it is applied.
+resources:
+  - sealed-secrets-namespace.yaml
+  - sealed-secrets-secret.yaml
