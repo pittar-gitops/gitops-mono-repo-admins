@@ -3,6 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "40"
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
   labels:
     gitops.ownedBy: openshift-gitops
   name: devteam1-argocd
