@@ -5,5 +5,5 @@ metadata:
     openshift.io/description: Shared CI/CD tools.
     openshift.io/display-name: CI/CD Tools
   labels:
-    argocd.argoproj.io/managed-by: developer-argocd
-  name: cicd
+    argocd.argoproj.io/managed-by: devteam1-argocd
+  name: devteam1-cicd

@@ -3,5 +3,8 @@ kind: Kustomization
 
 namespace: petclinic-prod
 
+bases:
+  - ../rbac/openshift-pipelines-rolebinding.yaml
+
 resources:
   - namespace.yaml
