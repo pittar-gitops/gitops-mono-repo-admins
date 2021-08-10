@@ -6,10 +6,10 @@ metadata:
     argocd.argoproj.io/compare-options: IgnoreExtraneous
   labels:
     gitops.ownedBy: openshift-gitops
-  name: devteam1-argocd
+  name: devteam1-gitops
 spec:
   destination:
-    namespace: devteam1-argocd
+    namespace: devteam1-gitops
     server: https://kubernetes.default.svc
   project: tenants
   source:
