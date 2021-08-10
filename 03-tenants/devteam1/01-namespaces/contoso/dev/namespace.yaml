@@ -4,7 +4,6 @@ metadata:
   annotations:
     openshift.io/description: Contoso DEV.
     openshift.io/display-name: Contoso DEV
-    openshift.io/requester: system:serviceaccount:argocd:argocd-application-controller
   labels:
-    argocd.argoproj.io/managed-by: developer-argocd
+    argocd.argoproj.io/managed-by: developer-gitops
   name: contoso-dev

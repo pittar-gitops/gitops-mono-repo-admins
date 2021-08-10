@@ -5,5 +5,5 @@ metadata:
     openshift.io/description: PetClinic PROD.
     openshift.io/display-name: PetClinic PROD
   labels:
-    argocd.argoproj.io/managed-by: devteam1-argocd
+    argocd.argoproj.io/managed-by: devteam1-gitops
   name: petclinic-prod
