@@ -7,6 +7,7 @@ bases:
   - ../../../03-cluster-services/01-sealed-secrets
  # - ../../../services/02-developer-argocd
   - ../../../03-cluster-services/02-openshift-pipelines
+  - ../../../03-cluster-services/03-web-terminal
 
 resources:
   - cluster-services-project.yaml
