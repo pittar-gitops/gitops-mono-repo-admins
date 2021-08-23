@@ -5,5 +5,5 @@ metadata:
     openshift.io/description: Dev Team 1 - GitOps.
     openshift.io/display-name: DevTeam1 GitOps
   labels:
-    argocd.argoproj.io/managed-by: devteam1-gitops
-  name: devteam1-gitops
+    argocd.argoproj.io/managed-by: developer-gitops
+  name: developer-gitops

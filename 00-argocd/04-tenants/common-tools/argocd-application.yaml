@@ -3,17 +3,16 @@ apiVersion: argoproj.io/v1alpha1
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "40"
-    argocd.argoproj.io/compare-options: IgnoreExtraneous
   labels:
     gitops.ownedBy: openshift-gitops
-  name: devteam1-gitops
+  name: common-tools-argocd
 spec:
   destination:
-    namespace: devteam1-gitops
+    namespace: developer-gitops
     server: https://kubernetes.default.svc
   project: tenants
   source:
-    path: 03-tenants/devteam1/00-argocd
+    path: 03-tenants/common-tools/00-argocd
     repoURL: https://github.com/pittar-gitops/gitops-mono-repo.git
     targetRevision: main
   syncPolicy:
