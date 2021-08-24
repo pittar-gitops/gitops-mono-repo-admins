@@ -5,5 +5,5 @@ metadata:
     openshift.io/description: PetClinic DEV.
     openshift.io/display-name: PetClinic DEV
   labels:
-    argocd.argoproj.io/managed-by: devteam1-gitops
+    argocd.argoproj.io/managed-by: developer-gitops
   name: petclinic-dev
