@@ -6,3 +6,4 @@ namespace: developer-gitops
 resources:
   - namespace.yaml
   - argocd-instance.yaml
+  - developer-gitops-consolelink.yaml
