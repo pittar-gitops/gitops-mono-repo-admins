@@ -5,3 +5,5 @@ namespace: cicd-tools
 
 resources:
   - namespace.yaml
+  - nexus-consolelink.yaml
+  - sonarqube-consolelink.yaml
