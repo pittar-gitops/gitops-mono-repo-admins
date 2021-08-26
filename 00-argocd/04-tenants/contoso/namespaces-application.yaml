@@ -5,14 +5,14 @@ metadata:
     argocd.argoproj.io/sync-wave: "41"
   labels:
     gitops.ownedBy: openshift-gitops
-  name: devteam1-tenant-namespaces
+  name: contoso-tenant-namespaces
 spec:
   destination:
     namespace: openshift-gitops
     server: https://kubernetes.default.svc
   project: tenants
   source:
-    path: 03-tenants/devteam1/01-namespaces
+    path: 03-tenants/contoso/01-namespaces
     repoURL: https://github.com/pittar-gitops/gitops-mono-repo.git
     targetRevision: main
   syncPolicy:

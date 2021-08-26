@@ -3,5 +3,8 @@ kind: Kustomization
 
 namespace: contoso-dev
 
+bases:
+  - ../base/rbac
+
 resources:
   - namespace.yaml
