@@ -5,3 +5,12 @@ namespace: openshift-gitops
 
 resources:
   - sealed-secrets-application.yaml
+
+patchesJson6902:
+- target:
+    version: v1
+    group: apps
+    kind: Deployment
+    name: sealed-secrets-controller
+    namespace: sealed-secrets
+  path: patch-update-status.yaml
