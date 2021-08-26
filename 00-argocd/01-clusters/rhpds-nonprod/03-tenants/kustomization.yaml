@@ -5,7 +5,8 @@ namespace: openshift-gitops
 
 bases:
   - ../../../04-tenants/common-tools
-  - ../../../04-tenants/devteam1
-  
+  - ../../../04-tenants/petclinic
+  - ../../../04-tenants/contoso
+
 resources:
   - tenants-project.yaml
