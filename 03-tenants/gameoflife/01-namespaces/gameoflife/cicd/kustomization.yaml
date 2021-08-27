@@ -5,3 +5,12 @@ namespace: gameoflife-cicd
 
 resources:
   - namespace.yaml
+  - cicd-image-puller-rolebinding.yaml
+
+patchesJson6902:
+  - target:
+      group: rbac.authorization.k8s.io
+      version: v1
+      kind: RoleBinding
+      name: cicd-image-puller
+    path: cicd-image-puller-rolebinding-patch.yaml

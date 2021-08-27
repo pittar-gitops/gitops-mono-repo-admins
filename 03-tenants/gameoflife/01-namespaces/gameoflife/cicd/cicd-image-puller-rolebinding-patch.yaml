@@ -1,0 +1,12 @@
+- op: add
+  path: /subjects/-
+  value:
+    kind: ServiceAccount
+    name: default
+    namespace: gameoflife-dev
+- op: add
+  path: /subjects/-
+  value:
+    kind: ServiceAccount
+    name: default
+    namespace: gameoflife-test
