@@ -10,5 +10,5 @@ roleRef:
   name: developer-gitops-argocd-extended-clusterrole
 subjects:
   - kind: ServiceAccount
-    name: developer-gitops:argocd-argocd-application-controller
+    name: argocd-argocd-application-controller
     namespace: developer-gitops
