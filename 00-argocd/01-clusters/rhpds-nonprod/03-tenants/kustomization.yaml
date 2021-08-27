@@ -7,6 +7,7 @@ bases:
   - ../../../04-tenants/common-tools
   - ../../../04-tenants/petclinic
   - ../../../04-tenants/contoso
+  - ../../../04-tenants/gameoflife
 
 resources:
   - tenants-project.yaml
