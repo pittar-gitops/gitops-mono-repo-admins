@@ -12,7 +12,7 @@ spec:
     server: https://kubernetes.default.svc
   project: tenants
   source:
-    path: 03-tenants/01-common-tools/01-argocd
+    path: 03-tenants/01-common-tools/00-argocd
     repoURL: https://github.com/pittar-gitops/gitops-mono-repo.git
     targetRevision: main
   syncPolicy:
