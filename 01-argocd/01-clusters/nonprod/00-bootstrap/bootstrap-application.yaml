@@ -1,0 +1,19 @@
+kind: Application
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+  name: cluster-bootstrap
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  project: cluster-bootstrap
+  source:
+    path: 01-argocd/01-clusters/nonprod
+    repoURL: https://github.com/pittar-gitops/gitops-mono-repo.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
