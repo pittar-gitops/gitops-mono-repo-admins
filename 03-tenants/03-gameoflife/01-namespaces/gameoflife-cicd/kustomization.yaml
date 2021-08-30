@@ -3,6 +3,9 @@ kind: Kustomization
 
 namespace: gameoflife-cicd
 
+bases:
+  - ../base/rbac/users
+
 resources:
   - namespace.yaml
   - cicd-image-puller-rolebinding.yaml

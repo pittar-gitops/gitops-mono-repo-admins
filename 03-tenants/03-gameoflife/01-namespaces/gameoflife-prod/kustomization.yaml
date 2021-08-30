@@ -4,7 +4,8 @@ kind: Kustomization
 namespace: gameoflife-prod
 
 bases:
-  - ../base/rbac
+  - ../base/rbac/users
+  - ../base/rbac/pipelines
 
 resources:
   - namespace.yaml

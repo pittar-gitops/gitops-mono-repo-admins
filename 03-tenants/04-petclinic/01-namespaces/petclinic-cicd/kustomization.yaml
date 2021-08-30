@@ -3,5 +3,8 @@ kind: Kustomization
 
 namespace: petclinic-cicd
 
+bases:
+  - ../base/rbac/users
+
 resources:
   - namespace.yaml

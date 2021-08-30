@@ -3,6 +3,9 @@ kind: Kustomization
 
 namespace: cicd-tools
 
+bases:
+  - ../base/rbac
+
 resources:
   - namespace.yaml
   - nexus-consolelink.yaml

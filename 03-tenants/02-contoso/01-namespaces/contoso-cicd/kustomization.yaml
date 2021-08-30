@@ -3,6 +3,9 @@ kind: Kustomization
 
 namespace: contoso-cicd
 
+bases:
+  - ../base/rbac/users
+
 resources:
   - namespace.yaml
   - quay-creds-secret-sealedsecret.json
