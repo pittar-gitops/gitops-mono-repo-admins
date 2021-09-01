@@ -4,3 +4,4 @@ kind: Kustomization
 bases:
   # Shared CI/CD tools.
   - cicd-tools
+  - developer-grafana

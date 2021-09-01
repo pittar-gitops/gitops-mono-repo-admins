@@ -2,7 +2,7 @@ kind: Application
 apiVersion: argoproj.io/v1alpha1
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "31"
+    argocd.argoproj.io/sync-wave: "23"
   labels:
     gitops.ownedBy: openshift-gitops
   name: cluster-monitoring
