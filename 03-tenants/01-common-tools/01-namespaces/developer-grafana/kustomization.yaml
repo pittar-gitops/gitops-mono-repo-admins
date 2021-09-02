@@ -3,7 +3,27 @@ kind: Kustomization
 
 namespace: developer-grafana
 
+commonAnnotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+
+bases:
+  - https://github.com/redhat-cop/gitops-catalog/grafana-operator/overlays/user-app
+
 resources:
   - namespace.yaml
-  - grafana-subscription.yaml
   - grafana-operatorgroup.yaml
+
+patchesJson6902:
+  - target:
+      version: v1alpha1
+      group: integreatly.org
+      kind: Grafana
+      name: grafana
+    path: patch-grafana-sar.yaml
+  - target:
+      version: v1
+      group: rbac.authorization.k8s.io
+      kind: ClusterRoleBinding
+      name: cluster-monitoring-view
+    path: patch-cluster-monitoring-view.yaml
+
