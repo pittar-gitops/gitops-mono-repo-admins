@@ -1,6 +1,6 @@
 - op: replace
   path: /subjects/0/namespace
-  value: developer-grafana
+  value: monitoring
 - op: replace
   path: /metadata/name
   value: cluster-monitoring-view-developer-grafana-monitor

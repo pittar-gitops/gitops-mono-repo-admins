@@ -4,4 +4,4 @@ metadata:
   name: grafana
 spec:
   targetNamespaces:
-   - developer-grafana
+   - monitoring

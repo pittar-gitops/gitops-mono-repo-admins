@@ -4,6 +4,4 @@ metadata:
   annotations:
     openshift.io/description: Developer Grafana Dashboards
     openshift.io/display-name: Grafana for Developers
-  labels:
-    argocd.argoproj.io/managed-by: developer-gitops
-  name: developer-grafana
+  name: monitoring
