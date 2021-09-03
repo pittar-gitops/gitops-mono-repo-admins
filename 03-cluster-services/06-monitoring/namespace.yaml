@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  annotations:
-    openshift.io/description: Developer Grafana Dashboards
-    openshift.io/display-name: Grafana for Developers
-  name: monitoring

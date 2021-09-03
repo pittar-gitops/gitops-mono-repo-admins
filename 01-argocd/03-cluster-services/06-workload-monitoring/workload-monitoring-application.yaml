@@ -5,14 +5,14 @@ metadata:
     argocd.argoproj.io/sync-wave: "36"
   labels:
     gitops.ownedBy: openshift-gitops
-  name: monitoring
+  name: workload-monitoring
 spec:
   destination:
-    namespace: openshift-operators
+    namespace: workload-monitoring
     server: https://kubernetes.default.svc
-  project: monitoring
+  project: cluster-services
   source:
-    path: 03-cluster-services/06-monitoring
+    path: 03-cluster-services/06-workload-monitoring
     repoURL: https://github.com/pittar-gitops/gitops-mono-repo.git
     targetRevision: main
   syncPolicy:

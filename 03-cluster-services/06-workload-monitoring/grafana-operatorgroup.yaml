@@ -4,4 +4,4 @@ metadata:
   name: grafana
 spec:
   targetNamespaces:
-   - monitoring
+   - workload-monitoring
