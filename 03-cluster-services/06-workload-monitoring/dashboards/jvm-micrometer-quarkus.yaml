@@ -39,8 +39,8 @@ spec:
       "editable": true,
       "gnetId": 14370,
       "graphTooltip": 1,
-      "id": 4,
-      "iteration": 1630849093192,
+      "id": 3,
+      "iteration": 1630849739944,
       "links": [],
       "panels": [
         {
@@ -2195,7 +2195,7 @@ spec:
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "repeatIteration": 1630849093192,
+          "repeatIteration": 1630849739944,
           "repeatPanelId": 3,
           "scopedVars": {
             "jvm_memory_pool_heap": {
@@ -2345,7 +2345,7 @@ spec:
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "repeatIteration": 1630849093192,
+          "repeatIteration": 1630849739944,
           "repeatPanelId": 3,
           "scopedVars": {
             "jvm_memory_pool_heap": {
@@ -2659,7 +2659,7 @@ spec:
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "repeatIteration": 1630849093192,
+          "repeatIteration": 1630849739944,
           "repeatPanelId": 78,
           "scopedVars": {
             "jvm_memory_pool_nonheap": {
@@ -2809,7 +2809,7 @@ spec:
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "repeatIteration": 1630849093192,
+          "repeatIteration": 1630849739944,
           "repeatPanelId": 78,
           "scopedVars": {
             "jvm_memory_pool_nonheap": {
@@ -2959,7 +2959,7 @@ spec:
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "repeatIteration": 1630849093192,
+          "repeatIteration": 1630849739944,
           "repeatPanelId": 78,
           "scopedVars": {
             "jvm_memory_pool_nonheap": {
@@ -3109,7 +3109,7 @@ spec:
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "repeatIteration": 1630849093192,
+          "repeatIteration": 1630849739944,
           "repeatPanelId": 78,
           "scopedVars": {
             "jvm_memory_pool_nonheap": {
@@ -5051,11 +5051,38 @@ spec:
             "allValue": null,
             "current": {
               "selected": false,
+              "text": "gameoflife-dev",
+              "value": "gameoflife-dev"
+            },
+            "datasource": "Prometheus",
+            "definition": "label_values({runtime=\"quarkus\"}, namespace)",
+            "error": null,
+            "hide": 0,
+            "includeAll": false,
+            "label": "namespace",
+            "multi": false,
+            "name": "namespace",
+            "options": [],
+            "query": "label_values({runtime=\"quarkus\"}, namespace)",
+            "refresh": 2,
+            "regex": "",
+            "skipUrlSync": false,
+            "sort": 0,
+            "tagValuesQuery": "",
+            "tags": [],
+            "tagsQuery": "",
+            "type": "query",
+            "useTags": false
+          },
+          {
+            "allValue": null,
+            "current": {
+              "selected": false,
               "text": "gameoflife-decisions",
               "value": "gameoflife-decisions"
             },
             "datasource": "Prometheus",
-            "definition": "",
+            "definition": "label_values({namespace =\"$namespace\"}, application)",
             "error": null,
             "hide": 0,
             "includeAll": false,
@@ -5063,7 +5090,7 @@ spec:
             "multi": false,
             "name": "application",
             "options": [],
-            "query": "label_values(application)",
+            "query": "label_values({namespace =\"$namespace\"}, application)",
             "refresh": 2,
             "regex": "",
             "skipUrlSync": false,
@@ -5079,11 +5106,11 @@ spec:
             "allValue": null,
             "current": {
               "selected": false,
-              "text": "10.128.2.15:8080",
-              "value": "10.128.2.15:8080"
+              "text": "decisions-77c87d7d6f-qr2n4",
+              "value": "decisions-77c87d7d6f-qr2n4"
             },
             "datasource": "Prometheus",
-            "definition": "",
+            "definition": "label_values(jvm_memory_used_bytes{namespace =\"$namespace\", application=\"$application\"}, pod)",
             "error": null,
             "hide": 0,
             "includeAll": false,
@@ -5092,7 +5119,7 @@ spec:
             "multiFormat": "glob",
             "name": "pod",
             "options": [],
-            "query": "label_values(jvm_memory_used_bytes{application=\"$application\"}, pod)",
+            "query": "label_values(jvm_memory_used_bytes{namespace =\"$namespace\", application=\"$application\"}, pod)",
             "refresh": 2,
             "regex": "",
             "skipUrlSync": false,
@@ -5112,7 +5139,7 @@ spec:
               "value": "$__all"
             },
             "datasource": "Prometheus",
-            "definition": "",
+            "definition": "label_values(jvm_memory_used_bytes{namespace =\"$namespace\", application=\"$application\", pod=\"$pod\", area=\"heap\"},id)",
             "error": null,
             "hide": 0,
             "includeAll": true,
@@ -5121,7 +5148,7 @@ spec:
             "multiFormat": "glob",
             "name": "jvm_memory_pool_heap",
             "options": [],
-            "query": "label_values(jvm_memory_used_bytes{application=\"$application\", pod=\"$pod\", area=\"heap\"},id)",
+            "query": "label_values(jvm_memory_used_bytes{namespace =\"$namespace\", application=\"$application\", pod=\"$pod\", area=\"heap\"},id)",
             "refresh": 1,
             "regex": "",
             "skipUrlSync": false,
@@ -5141,7 +5168,7 @@ spec:
               "value": "$__all"
             },
             "datasource": "Prometheus",
-            "definition": "",
+            "definition": "label_values(jvm_memory_used_bytes{namespace =\"$namespace\", application=\"$application\", pod=\"$pod\", area=\"nonheap\"},id)",
             "error": null,
             "hide": 0,
             "includeAll": true,
@@ -5150,7 +5177,7 @@ spec:
             "multiFormat": "glob",
             "name": "jvm_memory_pool_nonheap",
             "options": [],
-            "query": "label_values(jvm_memory_used_bytes{application=\"$application\", pod=\"$pod\", area=\"nonheap\"},id)",
+            "query": "label_values(jvm_memory_used_bytes{namespace =\"$namespace\", application=\"$application\", pod=\"$pod\", area=\"nonheap\"},id)",
             "refresh": 1,
             "regex": "",
             "skipUrlSync": false,
@@ -5164,7 +5191,7 @@ spec:
         ]
       },
       "time": {
-        "from": "now-3h",
+        "from": "now-5m",
         "to": "now"
       },
       "timepicker": {
@@ -5196,5 +5223,5 @@ spec:
       "timezone": "browser",
       "title": "JVM Quarkus (Micrometer)",
       "uid": "pmawgrlGk__",
-      "version": 2
+      "version": 1
     }
