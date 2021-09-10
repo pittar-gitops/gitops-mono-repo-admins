@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: openshift-operators
 
 bases:
-  - https://github.com/pittar/gitops-catalog/compliance-operator-refactor/advanced-cluster-security-operator/operator/overlays/latest?ref=acs-operator-refactor
+  - https://github.com/pittar/gitops-catalog/advanced-cluster-security-operator/operator/overlays/latest?ref=acs-operator-refactor
