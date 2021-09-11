@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: stackrox
 
 bases:
-  - https://github.com/pittar/gitops-catalog/advanced-cluster-security-operator/instance/overlays/default?ref=acs-operator-refactor
+  - https://github.com/pittar/gitops-catalog/advanced-cluster-security-operator/instance/overlays/internal-registry-integration?ref=acs-operator-refactor
