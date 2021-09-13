@@ -3,7 +3,7 @@ kind: GrafanaDashboard
 metadata:
   labels:
     app: grafana
-  name: jvm-micrometer
+  name: jvm-micrometer-springboot
 spec:
   name: server-dashboard.json
   json: |
@@ -4767,7 +4767,7 @@ spec:
         ]
       },
       "timezone": "browser",
-      "title": "JVM (Micrometer)",
+      "title": "JVM Spring Boot (Micrometer)",
       "uid": "Lr7VZnhWz",
       "version": 3
     }
