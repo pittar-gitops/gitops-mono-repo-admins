@@ -7,5 +7,5 @@ commonAnnotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 
 resources:
-  - jvm-micrometer-quarkus.yaml
+  #- jvm-micrometer-quarkus.yaml
   - jvm-micrometer-springboot.yaml
