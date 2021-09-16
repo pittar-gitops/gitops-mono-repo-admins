@@ -8,7 +8,7 @@ commonAnnotations:
 
 bases:
   - https://github.com/redhat-cop/gitops-catalog/grafana-operator/overlays/user-app
-  - dashboards
+  #- dashboards
 
 resources:
   - namespace.yaml
