@@ -7,3 +7,4 @@ bases:
   - gameoflife-dev
   - gameoflife-test
   - gameoflife-prod
+  - stackrox-config

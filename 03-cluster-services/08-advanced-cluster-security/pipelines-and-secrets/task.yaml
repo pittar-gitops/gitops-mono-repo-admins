@@ -1,0 +1,79 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: create-api-token-secret
+  namespace: stackrox
+spec:
+  params:
+    - description: The namespace to create the stackrox secret in.
+      name: NAMESPACE
+      type: string
+    - default: latest
+      description: The OpenShift Version to use
+      name: VERSION
+      type: string
+  steps:
+    - env:
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: password
+              name: central-htpasswd
+      image: 'quay.io/pittar/tekton-oc-toolbox:$(params.VERSION)'
+      name: create-api-token-and-secret
+      resources: {}
+      script: >
+
+        # Wait for central to be ready
+
+        attempt_counter=0
+
+        max_attempts=20
+
+        echo "Waiting for central to be available..." 
+
+        until $(curl -k --output /dev/null --silent --head --fail
+        https://central); do
+            
+            if [ ${attempt_counter} -eq ${max_attempts} ];then
+              echo "Max attempts reached"
+              exit 1
+            fi
+
+            printf '.'
+            attempt_counter=$(($attempt_counter+1))
+            echo "Made attempt $attempt_counter, waiting..."
+            sleep 10
+        done
+
+        CENTRAL_URL="`oc -n stackrox get route central -o
+        go-template='{{.spec.host}}'`"
+
+
+        API_ENDPOINT="/v1/apitokens/generate"
+
+        CENTRAL_URL_API="https://$CENTRAL_URL$API_ENDPOINT"
+
+        echo "$CENTRAL_URL_API"
+
+        PAYLOAD="{\"name\": \"$(params.NAMESPACE)\", \"role\": \"Continuous
+        Integration\"}" 
+
+        echo "$PAYLOAD"
+
+        echo "Generate new token."
+
+        RESPONSE=$(curl -k \
+          -X POST -u "admin:$PASSWORD" \
+          -H "Content-Type: application/json" \
+          --data "$PAYLOAD" \
+          $CENTRAL_URL_API)
+
+        TOKEN=$(jq '.token' <<< "$RESPONSE")
+
+        # Create secret in target namespace.
+
+        oc create secret generic roxsecrets \
+          --from-literal=rox_central_endpoint=$CENTRAL_URL:443 \
+          --from-literal=rox_api_token=$TOKEN \
+          -n $(params.NAMESPACE)
