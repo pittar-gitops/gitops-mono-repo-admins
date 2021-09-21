@@ -10,10 +10,10 @@ bases:
   - ../../base/stackrox-cicd-token-generator
 
 patches:
--  target:
-     kind: PipelineRun
-     name: stackrox-token-secret-patchme
-   patch: |-
+- target:
+    kind: PipelineRun
+    name: stackrox-token-secret-patchme
+  patch: |-
     - op: add
       path: /spec/params/-
       value:
