@@ -7,4 +7,18 @@ bases:
   - gameoflife-dev
   - gameoflife-test
   - gameoflife-prod
-  - stackrox-config
+  - base/stackrox-cicd-token-generator
+
+patches:
+-  target:
+     kind: PipelineRun
+     name: stackrox-token-secret-patchme
+   patch: |-
+    - op: add
+      path: /spec/params/-
+      value:
+        name: "NAMESPACE"
+        value: "gameoflife-cicd"
+    - op: replace
+      path: /metadata/name
+      value: 'stackrox-token-secret-gameoflife-cicd'

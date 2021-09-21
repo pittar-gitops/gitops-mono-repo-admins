@@ -3,5 +3,9 @@ kind: Kustomization
 
 namespace: stackrox
 
+commonAnnotations:
+  argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+  argocd.argoproj.io/sync-wave: "3"
+
 resources:
   - stackrox-secret-pipelinerun.yaml
