@@ -4,5 +4,5 @@ kind: Kustomization
 namespace: openshift-compliance
 
 bases:
-  - https://github.com/pittar/gitops-catalog/compliance-operator/operator/overlays/release-0.1?ref=refactor-compliance-operator
-  - https://github.com/pittar/gitops-catalog/compliance-operator/instance/overlays/ocp-cis?ref=refactor-compliance-operator
+  - https://github.com/redhat-cop/gitops-catalog/compliance-operator/operator/overlays/release-0.1?ref=v0.6
+  - https://github.com/redhat-cop/gitops-catalog/compliance-operator/instance/overlays/ocp-cis?ref=v0.6
