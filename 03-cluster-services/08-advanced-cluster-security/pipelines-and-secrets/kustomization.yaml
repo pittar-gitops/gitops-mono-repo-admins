@@ -7,5 +7,5 @@ commonAnnotations:
 
 resources:
   - pipeline-rbac.yaml
-  - stackrox-ci-secrest-task.yaml
+  - stackrox-ci-secrets-task.yaml
   - token-secret-pipeline.yaml
