@@ -13,6 +13,8 @@ spec:
       tls:
         termination: edge
         insecureEdgeTerminationPolicy: Redirect
+  dex:
+    openShiftOAuth: true
   resourceCustomizations: |
     route.openshift.io/Route:
       ignoreDifferences: |
