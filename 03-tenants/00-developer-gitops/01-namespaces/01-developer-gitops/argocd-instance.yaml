@@ -47,10 +47,10 @@ spec:
         hs.message = "Waiting for certificate"
         return hs
   resourceExclusions: |
-    - apiGroups:
-      - tekton.dev
-      kinds:
-      - PipelineRun
+    # - apiGroups:
+    #   - tekton.dev
+    #   kinds:
+    #   - PipelineRun
     - apiGroups:
       - compliance.openshift.io
       kinds:
