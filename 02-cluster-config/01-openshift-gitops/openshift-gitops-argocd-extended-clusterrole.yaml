@@ -13,12 +13,12 @@ rules:
       # - serviceaccounts
     verbs:
       - '*'
-  - apiGroups:
-    - argoproj.io
-    resources:
-      - argocds
-    verbs:
-      - '*'
+  # - apiGroups:
+  #   - argoproj.io
+  #   resources:
+  #     - argocds
+  #   verbs:
+  #     - '*'
   - apiGroups:
     - bitnami.com
     resources:
