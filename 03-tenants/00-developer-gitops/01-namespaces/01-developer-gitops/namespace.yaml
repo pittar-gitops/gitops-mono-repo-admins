@@ -4,6 +4,6 @@ metadata:
   annotations:
     openshift.io/description: Developer Argo CD instance.
     openshift.io/display-name: Developer GitOps
-  labels:
-    argocd.argoproj.io/managed-by: openshift-gitops
+  #labels:
+  #  argocd.argoproj.io/managed-by: openshift-gitops
   name: developer-gitops
