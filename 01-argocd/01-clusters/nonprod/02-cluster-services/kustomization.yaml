@@ -9,7 +9,7 @@ bases:
   #- ../../../03-cluster-services/03-web-terminal
   #- ../../../03-cluster-services/04-amq-streams
   #- ../../../03-cluster-services/05-single-sign-on
-  - ../../../03-cluster-services/06-workload-monitoring
+  #- ../../../03-cluster-services/06-workload-monitoring
   #- ../../../03-cluster-services/07-compliance
   #- ../../../03-cluster-services/08-advanced-cluster-security
 
