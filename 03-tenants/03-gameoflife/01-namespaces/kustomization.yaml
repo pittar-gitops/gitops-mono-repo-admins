@@ -7,7 +7,7 @@ bases:
   - gameoflife-dev
   - gameoflife-test
   - gameoflife-prod
-  - ../../base/stackrox-cicd-token-generator
+  #- ../../base/stackrox-cicd-token-generator
 
 patches:
 - target:
