@@ -6,5 +6,5 @@ namespace: openshift-operators
 bases:
   - clustertasks
 
-resources:
-  - openshift-pipelines-subscription.yaml
+#resources:
+#  - openshift-pipelines-subscription.yaml
